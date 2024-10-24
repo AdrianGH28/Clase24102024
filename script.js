@@ -1,5 +1,5 @@
 //arreglo
-
+/*
 let array = ["dato1",1,Boolean];
 console.log(array);
 console.log("tamaño array: " + array.length);
@@ -21,3 +21,44 @@ for(let i= 0; i<tabla.length; i++){
 }
 
 console.log("Fin del arreglo, valor de la posicion: "+ tabla[5]);
+
+*/
+
+//elminar elementos
+
+/*
+let array = ["dato1","dato2","dato3"];
+array.push("dato4");
+console.log(array[3]);
+
+//eliminar
+array.splice(2,2);
+console.log(array);
+*/
+let tareas = [];
+
+function agregarTarea(){
+    let tarea = document.getElementById("tarea").value;
+    if(tarea === ""){
+        alert("Neceistas agregar una tarea.");
+    }else{
+        tarea.psuh(tarea);
+        mostrarTareas();
+        document.getElementById("tarea").value="";
+    }
+}
+
+function mostrarTareas(){
+    let listaTareas = document.getElementById("ListaTareas");
+    listaTareas.innerHTML = "";
+
+    for ( let i = 0; i<tareas.length; i++){
+        li.innerHTML = tareas[i] + `<button onclick="eliminarTareas(${i})">Eliminar</button>`;
+        listaTareas.appendChild(li);
+    }
+}
+
+function eliminarTareas(indice){
+    tareas.spplice(indice, 1);
+    mostrarTareas();
+}
