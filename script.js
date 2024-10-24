@@ -40,9 +40,9 @@ let tareas = [];
 function agregarTarea(){
     let tarea = document.getElementById("tarea").value;
     if(tarea === ""){
-        alert("Neceistas agregar una tarea.");
+        alert("Necesitas agregar una tarea.");
     }else{
-        tarea.psuh(tarea);
+        tareas.push(tarea);
         mostrarTareas();
         document.getElementById("tarea").value="";
     }
@@ -59,6 +59,6 @@ function mostrarTareas(){
 }
 
 function eliminarTareas(indice){
-    tareas.spplice(indice, 1);
+    tareas.splice(indice, 1);
     mostrarTareas();
 }
